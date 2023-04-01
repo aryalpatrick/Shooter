@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import javax.imageio.ImageIO;
@@ -48,10 +49,11 @@ public class FPSGame extends JPanel implements KeyListener {
                 if (e.getButton() == MouseEvent.BUTTON1) {
                     playerX = e.getX();
                     playerY = e.getY();
-                    for (int i = 0; i < enemies.size(); i++) {
-                        Enemy enemy = enemies.get(i);
+                    Iterator<Enemy> iter = enemies.iterator();
+                    while (iter.hasNext()) {
+                        Enemy enemy = iter.next();
                         if (enemy.contains(playerX, playerY)) {
-                            enemies.remove(i);
+                            iter.remove();
                             score++;
                             break;
                         }
@@ -64,7 +66,7 @@ public class FPSGame extends JPanel implements KeyListener {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(800, 800);
+        return new Dimension(800, 600);
     }
 
     public void mouseMoved(MouseEvent e) {
@@ -80,7 +82,9 @@ public class FPSGame extends JPanel implements KeyListener {
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
-        for (Enemy enemy : enemies) {
+        Iterator<Enemy> iter = enemies.iterator();
+        while (iter.hasNext()) {
+            Enemy enemy = iter.next();
             enemy.update();
             enemy.draw(g);
         }
@@ -110,6 +114,8 @@ public class FPSGame extends JPanel implements KeyListener {
             }
         }
     }
+
+    
 
     @Override
     public void keyPressed(KeyEvent e) {
