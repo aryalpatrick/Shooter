@@ -1,7 +1,7 @@
 # FPSGame
 FPSGame is a simple Java-based first-person shooting game where the player's objective is to shoot down enemies that appear on the screen. The game utilizes the Java AWT (Abstract Window Toolkit) library for graphics rendering and user input handling.
 
-<h3Features</h3>
+<h3>Features</h3>
 Control the player's crosshair using the mouse.
 Left-click to shoot enemies and earn points.
 Enemies move around the screen in random directions.
