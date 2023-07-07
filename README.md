@@ -27,6 +27,6 @@ The game will display your current score on the screen.
 
 You can customize the game by modifying certain aspects of the code:
 
-To change the game window size, modify the WIDTH and HEIGHT constants in the FPSGame class.
-To use different crosshair and enemy images, replace the crosshair.png and enemy.png files respectively in the specified file paths.
+To change the game window size, modify the WIDTH and HEIGHT constants in the FPSGame class.<br>
+To use different crosshair and enemy images, replace the crosshair.png and enemy.png files respectively in the specified file paths.<br>
 To adjust the number of enemies appearing on the screen, modify the update() method in the FPSGame class.
